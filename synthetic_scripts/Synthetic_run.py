@@ -19,7 +19,7 @@ from auxiliary_fn.Train          import Train_Vonly, TrainV_B
 from plot.util                   import plt_Vretrieval_synthetic, plt_VBretrieval_synthetic
 
 #################################################################################################################
-#0_Retrieve V, 1_Retrive V&B
+#0_Retrieve V, 1_Retrieve V&B
 option    = 0
 
 #REQUIRED INPUTS
