@@ -30,6 +30,7 @@ pft_lst      = ['Crop R', 'NET Boreal', 'BET Tropical', 'NET Temperate',
                 'BET Temperate', 'BDT Temperate', 'C3 grass', 'BDS Temperate', 'C4 grass',
                       ]
 out_file     = "/data/Synthetic_case/One_parameter/Synthetic_Data_OnePAR.csv"
+             # "/data/Synthetic_case/Two_parameter/Synthetic_Data_TwoPAR.csv"
 
 nly    = 1
 OM_frac=0.1; sand_frac=0.45; clay_frac=0.45
