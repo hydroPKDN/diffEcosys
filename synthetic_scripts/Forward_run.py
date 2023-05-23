@@ -40,7 +40,7 @@ from auxiliary_fn.NN_input import get_btran_synthetic
 ##############################
 # 1. option = 0 ---> Single parameter recovery
 # 2. option = 1 ---> Dual parameter recovery
-option = 1
+option = 0
 
 ### Define the working device ###
 if torch.cuda.is_available():
