@@ -31,9 +31,9 @@ from plot.util                   import plt_Vretrieval_synthetic, plt_VBretrieva
 ##############################
 # 1. option = 0 ---> Single parameter recovery
 # 2. option = 1 ---> Dual parameter recovery
-option = 1
+option = 0
 
-seed  = 55
+seed  = 42
 
 
 ### Define the working device ###
