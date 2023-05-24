@@ -1,4 +1,4 @@
-name: dmfenv
+name: diffEcosys
 channels:
   - pytorch
   - nvidia
@@ -192,4 +192,3 @@ dependencies:
     - tornado==6.2
     - typing-extensions==4.4.0
     - urllib3==1.26.14
-prefix: /data/dmf5963/anaconda3/envs/dmfenv
