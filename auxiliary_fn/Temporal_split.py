@@ -62,7 +62,6 @@ def create_FIVEfolds(df_all, sed):
     train_sets = [pd.DataFrame() for i in range(k)]
     test_sets  = [pd.DataFrame() for i in range(k)]
     wholeset   = df_all
-    #wholeset  = shuffle(wholeset, random_state=sed)
     for i in range(k-1):
 
         # First location layer
