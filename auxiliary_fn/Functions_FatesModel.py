@@ -329,7 +329,12 @@ def LeafLayerBiophysicalRates(parsun_lsl, vcmax25top_ft, jmax25top_ft, co2_rcurv
 ########################################################################################################
 def get_data(df_input):
     # Description: This function extracts all the data variables required to run the whole model
-    # Inputs     : The whole dataset
+    # Inputs     : The whole dataset which includes;
+    # Patm       : The atmospheric pressure (KPa)
+    # CO2S       : The CO2 concentration at the leaf surface (ppm)
+    # Tleaf      : The leaf temperature (degree celcius)
+    # Tair       : The air temperature (degree celcius)
+    # RH         : The relative humidity (% , however converted to fraction using readfile func in "auxiliary_fn/util.py")
 
 
     # Outputs    :
