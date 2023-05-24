@@ -183,7 +183,7 @@ def QSat(tempk, RH):
                (c0 + td*(c1 + td*(c2 + td*(c3 + td*(c4 + td*(c5 + td*(c6 + td*(c7 + td*c8)))))))) * (1 - mask)
 
     veg_esat = veg_esat * 100.0           # pa
-    air_vpress = RH * veg_esat            #RH as fraction
+    air_vpress = RH * veg_esat            # RH as fraction
     return veg_esat, air_vpress
 
 
@@ -335,7 +335,11 @@ def get_data(df_input):
     # Tleaf      : The leaf temperature (degree celcius)
     # Tair       : The air temperature (degree celcius)
     # RH         : The relative humidity (% , however converted to fraction using readfile func in "auxiliary_fn/util.py")
-
+    # VPD        : The vapor pressure deficit (KPa)
+    # PARin      : The photosynthetic active radiation (umol m-2 s-1)
+    # BLCond.    : The boundary layer conductance (mol m-2 s-1)
+    # Pathway    : The photosynthetic pathway (C3 or C4)
+    # LAI        : The leaf area index 
 
     # Outputs    :
     # can_press               :Air pressure NEAR the surface of the leaf (Pa)
