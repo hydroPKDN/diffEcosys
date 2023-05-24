@@ -322,24 +322,3 @@ def testJacobian():
 
 
     return jac
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
