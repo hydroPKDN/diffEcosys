@@ -53,9 +53,9 @@ else:
 df_directory = "/data/example_dataset"
 
 ### Define the list of plant functional types in the dataset ###
-pft_lst      = ['Crop R'       , 'NET Boreal'   , 'BET Tropical' ,
-                'NET Temperate','BET Temperate' , 'BDT Temperate',
-                'C3 grass'     , 'BDS Temperate', 'C4 grass'
+pft_lst      = ['Crop R'       ,'NET Boreal'   ,
+                'NET Temperate','BET Temperate',
+                'C3 grass'     ,'BDS Temperate','C4 grass'
                 ]
 ### Define the output directory ###
 out_dir      = "/data/Synthetic_case/"
