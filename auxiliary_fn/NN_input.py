@@ -10,16 +10,17 @@ from auxiliary_fn.Stat import normalize_stat
 
 def B_input(cat_cols, df, nly, dev):
     # Description:prepare the categorical and the continous inputs for B Neural Network
-    # The function assumes that the continous inputs always include the three soil attributes: %sand, %clay and Fom
+    # The function assumes that the continous inputs always include the three soil attributes: percentage of sand (%sand),
+    # percentage of clay (%clay) and fraction of organic matter (Fom)
 
     # Inputs:
     # cat_cols: Categorical columns used for B Neural Network
     # df      : dataframe with the required datasets
     # nly     : number of soil layers considered
-    # dev     : the device whether 'cpu' or 'Cuda'
+    # dev     : the device whether 'cpu' or 'gpu'
 
     # Outputs:
-    # Cats: categorical inputs
+    # Cats.: categorical inputs
     # Conts: continous inputs
 
     if cat_cols == []:
@@ -59,8 +60,8 @@ def get_btran_synthetic(df, OM_frac, sand_frac, clay_frac, nly):
     # Inputs
     # df       : dataframe with the required datasets
     # OM_Frac  : weight of the fraction of the organic matter in the computation of B parameter
-    # sand_frac: weight of the fraction of the percentage of sand in the computation of B parameter
-    # clay_frac: weight of the fraction of the percentage of clay in the computation of B parameter
+    # sand_frac: weight of the percentage of sand in the computation of B parameter
+    # clay_frac: weight of the percentage of clay in the computation of B parameter
     # nly      : number of soil layers considered
 
     # Outputs:
@@ -147,7 +148,7 @@ def get_btran_params(df, dev, nly):
     # nly   : number of soil layers considered
 
     # Outputs:
-    # params : parameters used in btran calculations as:
+    # parameters used in btran calculations as:
     # r      : plant root distribution based on PFT
     # SMC    : soil wettness
     # epsi_o : soil matric potential for open stomata
@@ -165,35 +166,4 @@ def get_btran_params(df, dev, nly):
     epsi_o = torch.FloatTensor(df.epsi_o.values).to(dev)
     epsi_c = torch.FloatTensor(df.epsi_c.values).to(dev)
     return r, SMC, epsi_c, epsi_o
-
-
-def catcont_input(cat_col, cont_col, df, stat_dict, dev):
-    # Description: prepare the categorical and the continous inputs for stomatal conductance Neural Network
-
-    # Inputs:
-    # cat_col  : Categorical columns used for stomatal conductance Neural Network
-    # cont_col : Continous columns used for stomatal conductance Neural Network
-    # stat_dict: Dictionary including the statistics (mainly: mean value) required for normalizing continous variables
-    # df       : dataframe with the required datasets
-    # dev      : the device whether 'cpu' or 'Cuda'
-
-    # Outputs:
-    # Cats : categorical inputs
-    # Conts: continous inputs
-
-    conts_lst = []
-    for col in cont_col:
-        conts_lst.append(normalize_stat(df[col].values, mean = stat_dict[col][0], std = stat_dict[col][1]))
-
-    conts   = np.stack(conts_lst, axis = 1)
-    conts   = torch.tensor(conts, dtype= torch.float, device = dev)
-
-    if len(cat_col) == 0:
-        cats = []
-    else:
-        cats = np.stack([df[col].cat.codes.values for col in cat_col], axis = 1)
-        cats = torch.tensor(cats, dtype = torch.int64, device = dev)
-
-    return cats, conts
-
 
