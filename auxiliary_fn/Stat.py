@@ -50,14 +50,14 @@ def nse(predictions, targets):
 
 def create_stat_dict(col_lst, df):
     # Description: A function to create a dictionary with the mean of all variables in a column list. This dictionary
-    # will be later used in normalizing some continuous variables
+    # can be later used in normalizing some continuous variables
 
     # Inputs:
     # col_lst:list with subset of columns in the dataframe to be included in the dictionary
     # df     : The dataframe dataset
 
     # Outputs:
-    # stat_dict: Dictionary including the statistics(mainly: mean value) required for normalizing continuous variables
+    # stat_dict: Dictionary including the statistics(mean value and standard deviation) required for normalizing continuous variables
 
     stat_lst =[]
     for col in col_lst:
@@ -66,19 +66,19 @@ def create_stat_dict(col_lst, df):
     return stat_dict
 
 def add_noise(sed, mean, std_per, var):
-    # Description: A function to create synthetic noises that will be later to the synthetic value to simulate the errors
-    # or the noises that accompany real observations
+    # Description: A function to create synthetic noises that can be later added to the synthetic value to simulate the errors
+    # or the noises that exist with real observations
 
     # Inputs:
     # sed    : random seed to reproduce
     # mean   : The mean of added noises
-    # std_per:
+    # std_per: The fraction of the variable mean to be used to calculate the noise standard deviation
     # var    : variable array to which noises will be added
 
-    std = std_per * var.mean()
+    std   = std_per * var.mean()
     np.random.seed(sed)
     noise = np.random.normal(loc = mean, scale = std, size = len(var))
-    var = var + noise
+    var   = var + noise
     return var
 
 def cal_stats(pred, obs):
