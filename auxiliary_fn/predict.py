@@ -40,7 +40,7 @@ def predict(df,pp1, pp2):
     je        , LAI              , vpd = pre_fates(df, pp1, pp2)
 
     # First: Solve the nonlinear system using learned pp1 and pp2 values
-    f = Model_equations(df, pp1, pp2)
+    f  = Model_equations(df, pp1, pp2)
     J1 = Jacobian(mtd="batchScalarJacobian_AD")
     vG = tensorNewton(f,J1)
     x0 = get_guess(c3c4_path_index, leaf_co2_ppress)
