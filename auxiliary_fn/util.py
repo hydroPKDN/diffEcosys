@@ -42,7 +42,7 @@ def onehot_PFT(df, pft_lst):
     # pft_lst: list of the plant functional type categories to be considered for a specific model run
 
     one_hot_PFT = pd.get_dummies(df['PFT'])
-    df          = df.reset_index(drop = True);
+    df          = df.reset_index(drop = True)
     one_hot_PFT = one_hot_PFT.reset_index(drop = True)
     df          = df.join(one_hot_PFT)
     # if isinstance(colname, list):
