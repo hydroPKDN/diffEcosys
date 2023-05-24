@@ -210,7 +210,7 @@ class Model_equations(torch.nn.Module):
     # medlyn_slope            :Slope for Medlyn stomatal conductance model method, the unit is KPa^0.5
     # can_o2_ppress           :Partial pressure of O2 NEAR the leaf surface (Pa)
     # can_press               :Air pressure NEAR the surface of the leaf (Pa)
-    # can_co2_ppress          :Partial pressure of CO2 NEAR the leaf surface (Pa)
+    # leaf_co2_ppress         :Partial pressure of CO2 AT the leaf surface (Pa)
     # veg_esat                :saturation vapor pressure at veg_tempk (Pa)
     # qabs                    :PAR absorbed by PS II (umol photons/m**2/s)
     # LAI                     :Leaf Area Index
@@ -220,7 +220,6 @@ class Model_equations(torch.nn.Module):
         self.forcing = forcing
         self.pp1 = pp1
         self.pp2 = pp2
-        #self.f = torch.zeros(nb,ny,requires_grad=True, device=gpuid)
 
     # output = model.forward(input) # where input are for the known data points
     def forward(self, x):
