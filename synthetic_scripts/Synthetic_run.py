@@ -59,8 +59,10 @@ out_dir_lst= ["/Results/Synthetic_case/One_parameter","/Results/Synthetic_case/T
 Epochs_lst = [100,600]
 
 ### Define the list of plant functional types in the dataset ###
-pft_lst    = ['Crop R', 'NET Boreal', 'BET Tropical', 'NET Temperate',
-             'BET Temperate', 'BDT Temperate', 'C3 grass', 'BDS Temperate','C4 grass']
+pft_lst      = ['Crop R'       ,'NET Boreal'   ,
+                'NET Temperate','BET Temperate',
+                'C3 grass'     ,'BDS Temperate','C4 grass'
+                ]
 
 ### Define the target column ###
 # should be the same as the one defined in 'Forward_run.py' script
@@ -117,7 +119,7 @@ Expname   = Expnm_lst[option]; df_path= df_path_lst[option]; output_directory = 
 # or False (RH, soil clay and sand are already fractions in the synthetic dataset)
 df_input_all = readfile(df_path, pft_lst, to_frac = False)
 # Add user-defined noise to the synthetic net photosynthetic rates to resemble inaccuracies in the real measurements
-df_input_all[target_col] = add_noise(sed=42, mean = 0.0,std_per=0.05, var = df_input_all[target_col].values)
+df_input_all[target_col] = add_noise(sed=42, mean = 0.0,std_per=0.025, var = df_input_all[target_col].values)
 # perform the one-hot encoding step to prepare inputs for the Vcmax25 neural network
 df_input_all = onehot_PFT(df_input_all, pft_lst)
 
