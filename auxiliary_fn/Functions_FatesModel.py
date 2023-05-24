@@ -380,9 +380,9 @@ def get_data(df_input):
     medlyn_slope             = torch.FloatTensor(df_input.medslope.values)
 
     return (    can_press               , can_o2_ppress  , leaf_co2_ppress, veg_tempk, parsun_lsl   ,\
-                veg_esat                , c3c4_path_index, mm_kco2       , mm_ko2   ,co2_cpoint    ,\
-                cf                      , gb_mol         , ceair         , stomatal_intercept_btran,\
-                medlyn_slope            , qabs           , LAI           , vpd)
+                veg_esat                , c3c4_path_index, mm_kco2        , mm_ko2   ,co2_cpoint    ,\
+                cf                      , gb_mol         , ceair          , stomatal_intercept_btran,\
+                medlyn_slope            , qabs           , LAI            , vpd)
 
 def pre_fates(forcing,vcmax25top_ft, btran):
 
