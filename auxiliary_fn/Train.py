@@ -89,7 +89,7 @@ def TrainV_B(epochs ,Vcat, Bcat, Bcont,btran_params, target, NN_v, NN_b, forcing
     # vcmax_max: a maximum limit for Vcmax25 to rescale the output of the neural network
     # vcmax_min: a minimum limit for Vcmax25 to rescale the output of the neural network
 
-    params = list(NN_v.parameters()) + list(NN_b.parameters())
+    params   = list(NN_v.parameters()) + list(NN_b.parameters())
     optimizer=torch.optim.Adam(params, lr=0.045)
     for i in range(epochs):
 
