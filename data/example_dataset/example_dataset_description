@@ -1,3 +1,25 @@
 This file is to describe different columns in example_dataset.csv
 
-Pathway : Photosynthetic pathway (C3 or C4)
+Pathway     : Photosynthetic pathway (C3 or C4)
+Location    : Name of the site
+Date        : Date of measurement
+RH          : Relative humidity (%)
+Tair        : Air temperature (°C)
+Tleaf       : leaf temperature (°C)
+PARin       : Photosynthetic active radiation (umol m-2 s-1)
+Patm        : Atmoshpheric pressure (Kpa)
+LAI         : Leaf area index
+CO2S        : CO2 concentration at the leaf surface (ppm)
+VPD         : Vapor pressure deficit (Kpa)
+BLCond      : Boundary layer conductance (mol m-2 s-1)
+PFT         : Plant functional type category
+PFT_ID      : Plant functional type ID
+vcmax_CLM45 : Maximum carboxylation rate at 25 °C corresponding to each plant functional type (based on Community Land Model V4.5)
+epsi_o      : Soil matric potential for open stomata corresponding to each plant functional type (based on Community Land Model V4.5) (umol m-2 s-1)
+epsi_c      : Soil matric potential for closed stomata corresponding to each plant functional type (based on Community Land Model V4.5) (umol m-2 s-1)
+soil_clay_0 : Percentage of clay in the first soil layer (%)
+soil_sand_0 : Percentage of clay in the first soil layer (%)
+soi_OM_0    : Fraction of organic matter in the first soil layer
+SM_0        : Volumetric soil moisture in the first soil layer
+SMC_0       : Soil wetness in the first soil layer
+medslope    : Slope used in Medlyn stomatal conductance model corresponding to each plant functional type 
