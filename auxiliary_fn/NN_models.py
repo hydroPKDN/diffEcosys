@@ -15,7 +15,7 @@ def embszs_define(cols, df):
 
     # Outputs:
     # emb_szs: The embedding size as a tuple
-    #cat_szs = [len(df[col].cat.categories) for col in cols]
+    # cat_szs = [len(df[col].cat.categories) for col in cols]
     cat_szs = [df[col].nunique() for col in cols]
     emb_szs = [(size, min(50, (size+1)//2)) for size in cat_szs]
     return emb_szs
@@ -41,7 +41,7 @@ class Network(nn.Module):
 
 #####################################################################################################################
 class Network_sig(nn.Module):
-    # A more than the previous versions that can include different numbers of layers as indicated by the user.
+    # A more flexible version than the previous one that can include different numbers of layers as indicated by the user.
 
     # Sigmoid activation functions are used for the hidden layers and NONE for the output layer
     def __init__(self, n_cont, out_sz, layers, p = 0.4):
@@ -66,7 +66,7 @@ class Network_sig(nn.Module):
 
 #####################################################################################################################
 class TabularModel_sig(nn.Module):
-    # A more flexible than the previous versions that can include different numbers of layers as indicated by the user.
+    # A more flexible version than the previous ones that can include different numbers of layers as indicated by the user.
     # It can also digest categorical and continuous inputs simultaneously through the embedding layer
 
     # Sigmoid activation functions are used for the hidden layers and the output layer
@@ -82,7 +82,6 @@ class TabularModel_sig(nn.Module):
         for i in layers:
             layerlist.append(nn.Linear(n_in, i))
             layerlist.append(nn.Sigmoid())
-            #layerlist.append(nn.BatchNorm1d(i))
             layerlist.append(nn.Dropout(p))
             n_in = i
         layerlist.append(nn.Linear(layers[-1], out_sz))
@@ -96,13 +95,12 @@ class TabularModel_sig(nn.Module):
 
         x = torch.cat(embeddings,1)
         x = self.emb_drop(x)
-        #x_cont = self.bn_cont(x_cont)
         x = torch.cat([x,x_cont],1)
         x = self.layers(x)
         return x
 #####################################################################################################################
 class TabularModel_relu(nn.Module):
-    # A more flexible than the previous versions that can include different numbers of layers as indicated by the user.
+    # A more flexible version than the previous ones that can include different numbers of layers as indicated by the user.
     # It can also digest categorical and continuous inputs simultaneously through the embedding layer
 
     # RELU activation functions are used for the hidden layers and the output layer
