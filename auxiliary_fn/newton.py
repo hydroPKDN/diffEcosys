@@ -163,7 +163,7 @@ def rtnobnd(x0, G, J, settings, doPrint=False):
         x    = xnew
         iter +=1
         if doPrint:
-            print(f"iter={iter}, x= {float(x[0])}, dfdx= {float(dfdx[0])}, xtol= {xtol}, ftol= {ftol}") #x1164= {x[1164]}, f1164 = {f[1164]}, dfdx1164 = {dfdx[1164]}"
+            print(f"iter={iter}, x= {float(x[0])}, dfdx= {float(dfdx[0])}, xtol= {xtol}, ftol= {ftol}") 
     return x
 
 
