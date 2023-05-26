@@ -2,7 +2,7 @@
 The Differentiable Ecosystem Model (a hybrid, physics-informed machine learning system for ecosystem modeling).
 This release contains example codes and datasets similar to those used to produce some work in the following paper:
 
-Aboelyazeed, D., Xu, C., Hoffman, F. M., Jones, A. W., Rackauckas, C., Lawson, K. E., and Shen, C.: A differentiable ecosystem modeling framework for large-scale inverse problems: demonstration with photosynthesis simulations, Biogeosciences Discuss. [preprint], https://doi.org/10.5194/bg-2022-211, in review, 2022.
+Aboelyazeed, D., Xu, C., Hoffman, F. M., Jones, A. W., Rackauckas, C., Lawson, K. E., and Shen, C.: A differentiable, physics-informed ecosystem modeling and learning framework for large-scale inverse problems: Demonstration with photosynthesis simulations, Biogeosciences (Accepted, 2023) [preprint] https://doi.org/10.5194/bg-2022-211.
 
 # Instructions
 Please read this [Instruction file](https://github.com/hydroPKDN/diffEcosys/blob/main/Instructions_README.pdf) which includes detailed instructions for running the released codes
